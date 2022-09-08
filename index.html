@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,34 +7,12 @@
     <title>Document</title>
   </head>
   <body>
+    <header></header>
+    <nav></nav>
+    <main></main>
     hi<br />
     <a href="http://www.naver.com/">네이버</a>
-    <div data-include-path="footer.html"></div>
     <footer></footer>
-    <script>
-      fetch("footer.html")
-        .then((response) => {
-          return response.text();
-        })
-        .then((data) => {
-          document.querySelector("footer").innerHTML = data;
-        });
-      //   window.addEventListener("load", function () {
-      //     var allElements = document.getElementsByTagName("*");
-      //     Array.prototype.forEach.call(allElements, function (el) {
-      //       var includePath = el.dataset.includePath;
-      //       if (includePath) {
-      //         var xhttp = new XMLHttpRequest();
-      //         xhttp.onreadystatechange = function () {
-      //           if (this.readyState == 4 && this.status == 200) {
-      //             el.outerHTML = this.responseText;
-      //           }
-      //         };
-      //         xhttp.open("GET", includePath, true);
-      //         xhttp.send();
-      //       }
-      //     });
-      //   });
-    </script>
+    <script src="./js/include.js"></script>
   </body>
 </html>
