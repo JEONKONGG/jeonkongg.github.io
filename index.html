@@ -7,10 +7,12 @@
     <title>Document</title>
   </head>
   <body>
+    <h1></h1>
+    <h2></h2>
     <script>
       fetch("http://127.0.0.1:8080/testApi/test.json")
         .then((response) => response.json())
-        .then((data) => console.log(data.a));
+        .then((data) => (document.querySelector("h1").textContent = data.a));
     </script>
   </body>
 </html>
