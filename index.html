@@ -7,12 +7,17 @@
     <title>Document</title>
   </head>
   <body>
-    <h1></h1>
-    <h2></h2>
+    <div>
+      <h1></h1>
+      <h1></h1>
+    </div>
     <script>
+      let arr = [];
       fetch("http://127.0.0.1:8080/testApi/test.json")
-        .then((response) => response.json())
-        .then((data) => (document.querySelector("h1").textContent = data.a));
+        .then((res) => res.json())
+        .then((data) => arr.push(data));
+      console.log(arr);
+      //document.querySelector("div:nth-child(1)").textContent = list.a;
     </script>
   </body>
 </html>
