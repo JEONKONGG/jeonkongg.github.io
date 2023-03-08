@@ -1,43 +1,37 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      href="http://fonts.googleapis.com/css?family=Montserrat+Alternates"
-      rel="stylesheet"
-      type="text/css"
-    />
-  </head>
-  <body>
-    <script>
-      document.body.style.backgroundColor = "beige";
-      document.body.style.height = "100vh";
-      document.body.style.margin = "0px";
-      document.body.style.display = "flex";
-      document.body.style.justifyContent = "center";
-
-      const clock = document.createElement("div");
-      clock.style.display = "flex";
-      clock.style.justifyContent = "center";
-      clock.style.alignItems = "center";
-      clock.style.fontSize = "130px";
-      clock.style.fontWeight = "700";
-      clock.style.fontFamily = "Montserrat Alternates, sans-serif";
-      document.body.appendChild(clock);
-
-      function getClock() {
-        const date = new Date();
-        const hours = String(date.getHours()).padStart(2, "0");
-        const min = String(date.getMinutes()).padStart(2, "0");
-        const sec = String(date.getSeconds()).padStart(2, "0");
-        clock.innerText = `${hours}:${min}:${sec}`;
-      }
-
-      getClock();
-      setInterval(getClock, 1000);
-    </script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Momentum App</title>
+</head>
+<body>
+    <h2 id="clock"></h2>
+    <form class="hidden" id="login-form">
+        <input required maxlength="15" type="text" placeholder="What is your name?">
+        <input type="submit" value="Log In"/>
+    </form>
+    <h1 class="hidden" id="greeting"></h1>
+    <form id="todo-form">
+        <input type="text" placeholder="Write a To Do and Press Enter" required>
+    </form>
+    <ul id="todo-list"></ul>
+    <div id="quote">
+        <span></span>
+        <span></span>
+    </div>
+    <div id="weather">
+        <span></span>
+        <span></span>
+    </div>
+    <script src="js/globalVariable.js"></script>
+    <script src="js/greetings.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
+</body>
 </html>
