@@ -5,19 +5,12 @@ const toDoList = document.getElementById("todo-list");
 const TODOS_KEY = "todos";
 const TODOS_ITEM = "todo-item";
 const TODOS_LI = "todo-li";
-const TODOS_DONE = "todo-done";
 
 let toDos = [];
-let doneYn = false;
+let toDosTmp = [];
 
 function saveToDos() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
-}
-
-function doneToDo(event){
-    const li = event.target.parentElement;
-    li.classList.add(TODOS_DONE);
-    saveToDos();
 }
 
 function deleteToDo(event){
@@ -31,7 +24,6 @@ function paintToDo(newTodoObj) {
     const li = document.createElement("li");
     li.id = newTodoObj.id;
     li.classList.add(TODOS_LI);
-    li.addEventListener("click", doneToDo);
     const span = document.createElement("span");
     span.classList.add(TODOS_ITEM);
     span.innerText = newTodoObj.text;
@@ -50,7 +42,6 @@ function handleToDoSubmit(event) {
     const newTodoObj = {
         text: newTodo,
         id: Date.now(),
-        done: doneYn,
     }
     toDos.push(newTodoObj);
     paintToDo(newTodoObj);

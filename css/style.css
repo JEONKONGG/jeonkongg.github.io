@@ -113,12 +113,6 @@ ul#todo-list {
         font-size: 10pt;
         font-weight: 600;
     }
-    /* todo list > todo item > done... */
-    ul#todo-list li.todo-done {
-        text-decoration: line-through;
-        color: #fff;
-        background-color: grey;
-    }
 
 /* footer */
 footer {
