@@ -1,21 +1,20 @@
-import { useState, useEffect } from "react";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import Detail from './routes/Detail';
+import Home from './routes/Home';
 
 function App() {
-  const [counter, setValue] = useState(0);
-  const onClick = () => setValue((prev) => prev + 1);
-
-  console.log("i run all the time");
-  const iRunOnlyOnce = () => {
-    console.log('i run only once.');
-  }
-  useEffect(iRunOnlyOnce, []);
-
-  return (
-    <div>
-      <h1>{counter}</h1>
-      <button onClick={onClick}>Click Me</button>
-    </div>
-  );
+  return ( 
+  <Router>
+    <Switch>
+      <Route path="/movie/:id">
+        <Detail />
+      </Route>
+      <Route path="/">
+        <Home />
+      </Route>
+    </Switch>
+  </Router>
+);
 }
 
 export default App;
